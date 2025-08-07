@@ -8,7 +8,7 @@ import os
 import sys
 import signal
 from dotenv import load_dotenv
-from typing import Callable, Dict, Any, Optional
+from typing import Callable, Dict, Any, Optional, List
 from datetime import datetime
 
 class BaseSmartSellerService:
@@ -166,6 +166,41 @@ class BaseSmartSellerService:
         except Exception as e:
             self.logger.error(f"❌ Ошибка отправки сообщения: {e}")
             return False
+
+    def publish_messages_batch(self, exchange: str, routing_key: str, messages: List[Dict[Any, Any]]):
+        try:
+            if not messages:
+                return True
+
+            self.rabbitmq_channel.tx_select()
+
+            enriched_message = {
+                'timestamp': datetime.utcnow().isoformat(),
+                'service': self.service_name,
+                'data': messages
+            }
+
+            self.rabbitmq_channel.basic_publish(
+                exchange=exchange,
+                routing_key=routing_key,
+                body=json.dumps(enriched_message, ensure_ascii=False),
+                properties=pika.BasicProperties(
+                    delivery_mode=2,
+                    content_type='application/json'
+                )
+            )
+
+            self.rabbitmq_channel.tx_commit()
+            self.logger.info(f"📤 Отправлен пакет сообщений: {len(messages)}")
+            return True
+
+        except Exception as e:
+            try:
+                self.rabbitmq_channel.tx_rollback()
+            except Exception:
+                pass
+            self.logger.error(f"❌ Ошибка отправки пакетных сообщений: {e}")
+            return False
     
     def consume_messages(self, queue: str, callback: Callable):
         try:
@@ -173,16 +208,30 @@ class BaseSmartSellerService:
                 try:
                     message = json.loads(body.decode('utf-8'))
                     self.logger.info(f"📥 Получено сообщение из {queue}")
-                    
-                    success = callback(message)
-                    
-                    if success:
-                        ch.basic_ack(delivery_tag=method.delivery_tag)
-                        self.logger.info("✅ Сообщение обработано")
+
+                    data = message.get('data') if isinstance(message, dict) else None
+                    if isinstance(data, list):
+                        all_success = True
+                        for item in data:
+                            single_message = {**message, 'data': item}
+                            if not callback(single_message):
+                                all_success = False
+                                break
+                        if all_success:
+                            ch.basic_ack(delivery_tag=method.delivery_tag)
+                            self.logger.info("✅ Пакет сообщений обработан")
+                        else:
+                            ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
+                            self.logger.error("❌ Ошибка обработки сообщения из пакета")
                     else:
-                        ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
-                        self.logger.error("❌ Ошибка обработки сообщения")
-                        
+                        success = callback(message)
+                        if success:
+                            ch.basic_ack(delivery_tag=method.delivery_tag)
+                            self.logger.info("✅ Сообщение обработано")
+                        else:
+                            ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
+                            self.logger.error("❌ Ошибка обработки сообщения")
+
                 except Exception as e:
                     self.logger.error(f"❌ Ошибка в обработчике сообщений: {e}")
                     ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)

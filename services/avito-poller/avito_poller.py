@@ -5,7 +5,7 @@ import requests
 import json
 import time
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 sys.path.append('/opt/smart-seller/services')
 
 from base_service import BaseSmartSellerService
@@ -18,6 +18,7 @@ class EnhancedAvitoPollerService(BaseSmartSellerService):
         self.polling_interval = int(os.getenv('AVITO_POLLING_INTERVAL', 30))
         self.api_timeout = int(os.getenv('AVITO_API_TIMEOUT', 30))
         self.api_base_url = 'https://api.avito.ru'
+        self.batch_size = int(os.getenv('RABBITMQ_BATCH_SIZE', 50))
         
         if not self.user_id:
             self.logger.error("❌ AVITO_USER_ID должен быть указан!")
@@ -352,12 +353,11 @@ class EnhancedAvitoPollerService(BaseSmartSellerService):
                 elif extracted_raw is None:
                     extracted_data = {}
             
-            # Отправляем каждое новое сообщение с полным контекстом
+            batch: List[Dict[str, Any]] = []
             for message in new_messages:
                 content = message.get('content', {})
                 message_text = content.get('text', '') if isinstance(content, dict) else str(content)
-                
-                # Создаем полную структуру для AI
+
                 ai_message = {
                     'message_id': message.get('id'),
                     'chat_id': chat_id,
@@ -366,33 +366,38 @@ class EnhancedAvitoPollerService(BaseSmartSellerService):
                     'timestamp': datetime.fromtimestamp(message.get('created', 0)).isoformat() if message.get('created') else datetime.now().isoformat(),
                     'direction': 'incoming' if message.get('direction') == 'in' else 'outgoing',
                     'source': 'avito',
-                    
-                    # ПОЛНЫЙ КОНТЕКСТ ДЛЯ AI
                     'conversation_context': {
-                        'full_chronological_history': full_history,  # Вся история диалога
-                        'current_ai_context': ai_context,           # Текущий контекст AI
-                        'extracted_data': extracted_data,           # Уже извлеченные данные
+                        'full_chronological_history': full_history,
+                        'current_ai_context': ai_context,
+                        'extracted_data': extracted_data,
                         'total_messages': len(full_history),
                         'conversation_stage': 'active',
                         'requires_processing': True
                     }
                 }
-                
-                # Отправляем в RabbitMQ для обработки AI
-                success = self.publish_message(
+
+                batch.append(ai_message)
+                self.logger.info(f"📥 Добавлено сообщение в пакет: {message_text[:30]}...")
+
+                if len(batch) >= self.batch_size:
+                    if not self.publish_messages_batch(
+                        exchange=self.exchange,
+                        routing_key='ai.message.new_with_context',
+                        messages=batch
+                    ):
+                        self.logger.error("❌ Ошибка отправки сообщения в RabbitMQ")
+                        return False
+                    batch = []
+
+            if batch:
+                if not self.publish_messages_batch(
                     exchange=self.exchange,
                     routing_key='ai.message.new_with_context',
-                    message=ai_message
-                )
-                
-                if success:
-                    self.logger.info(f"✅ Отправлено сообщение с контекстом: {message_text[:30]}...")
-                else:
-                    self.logger.error(f"❌ Ошибка отправки сообщения в RabbitMQ")
+                    messages=batch
+                ):
+                    self.logger.error("❌ Ошибка отправки сообщения в RabbitMQ")
                     return False
-                
-                time.sleep(0.1)  # Небольшая пауза между сообщениями
-            
+
             return True
             
         except Exception as e:
