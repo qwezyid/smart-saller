@@ -1,0 +1,24 @@
+2025-08-07 05:33:25,729 - force-token-refresh - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:33:25,732 - force-token-refresh - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52250), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:25,733 - force-token-refresh - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:33:25,740 - force-token-refresh - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:33:25,740 - force-token-refresh - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:33:25,740 - force-token-refresh - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:33:25,741 - force-token-refresh - INFO - Created channel=1
+2025-08-07 05:33:25,746 - force-token-refresh - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:33:25,928 - force-token-refresh - INFO - ✅ Redis подключение установлено
+2025-08-07 05:33:26,275 - force-token-refresh - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:33:26,764 - force-token-refresh - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:33:26,765 - force-token-refresh - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:33:26,767 - force-token-refresh - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f0508310ee0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:33:26,767 - force-token-refresh - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:33:26,768 - force-token-refresh - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52250), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:26,768 - force-token-refresh - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52250), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:26,768 - force-token-refresh - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52250), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:26,768 - force-token-refresh - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:33:26,769 - force-token-refresh - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:33:26,769 - force-token-refresh - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52250), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:26,769 - force-token-refresh - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:33:26,769 - force-token-refresh - INFO - RabbitMQ отключен
+2025-08-07 05:33:26,770 - force-token-refresh - INFO - Redis отключен
+2025-08-07 05:33:26,770 - force-token-refresh - INFO - PostgreSQL отключен

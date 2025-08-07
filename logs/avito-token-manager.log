@@ -1,0 +1,154 @@
+2025-08-07 05:13:23,788 - avito-token-manager - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:13:23,790 - avito-token-manager - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 38130), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:13:23,791 - avito-token-manager - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f165c62be20>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f165c62be20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:13:23,795 - avito-token-manager - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f165c62be20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:13:23,796 - avito-token-manager - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f165c62be20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:13:23,796 - avito-token-manager - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f165c62be20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:13:23,796 - avito-token-manager - INFO - Created channel=1
+2025-08-07 05:13:23,798 - avito-token-manager - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:13:23,978 - avito-token-manager - INFO - ✅ Redis подключение установлено
+2025-08-07 05:13:24,322 - avito-token-manager - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:13:24,323 - avito-token-manager - INFO - Запуск менеджера токенов Avito
+2025-08-07 05:13:24,398 - avito-token-manager - INFO - Действующий токен не найден, получаем новый
+2025-08-07 05:13:24,398 - avito-token-manager - INFO - Запрос нового токена к https://api.avito.ru/token
+2025-08-07 05:13:24,677 - avito-token-manager - INFO - Токен сохранен в Redis с TTL 86100 секунд
+2025-08-07 05:13:24,715 - avito-token-manager - ERROR - Ошибка выполнения SQL: ON CONFLICT does not support deferrable unique constraints/exclusion constraints as arbiters
+
+2025-08-07 05:13:24,752 - avito-token-manager - ERROR - Ошибка сохранения токена
+2025-08-07 05:13:24,753 - avito-token-manager - INFO - Токен недействителен или отсутствует, получаем новый
+2025-08-07 05:13:24,753 - avito-token-manager - INFO - Запрос нового токена к https://api.avito.ru/token
+2025-08-07 05:13:25,015 - avito-token-manager - INFO - Токен сохранен в Redis с TTL 86100 секунд
+2025-08-07 05:13:25,088 - avito-token-manager - ERROR - Ошибка выполнения SQL: ON CONFLICT does not support deferrable unique constraints/exclusion constraints as arbiters
+
+2025-08-07 05:13:25,125 - avito-token-manager - ERROR - Ошибка сохранения токена
+2025-08-07 05:13:25,126 - avito-token-manager - ERROR - Не удалось получить начальный токен
+2025-08-07 05:13:55,529 - avito-token-manager - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:13:55,531 - avito-token-manager - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 34484), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:13:55,532 - avito-token-manager - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:13:55,535 - avito-token-manager - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:13:55,535 - avito-token-manager - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:13:55,535 - avito-token-manager - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:13:55,535 - avito-token-manager - INFO - Created channel=1
+2025-08-07 05:13:55,537 - avito-token-manager - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:13:55,717 - avito-token-manager - INFO - ✅ Redis подключение установлено
+2025-08-07 05:13:56,061 - avito-token-manager - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:13:56,061 - avito-token-manager - INFO - Запуск менеджера токенов Avito
+2025-08-07 05:13:56,098 - avito-token-manager - INFO - Используем токен из кеша
+2025-08-07 05:13:56,098 - avito-token-manager - INFO - Текущий токен действителен
+2025-08-07 05:13:56,098 - avito-token-manager - INFO - Запуск планировщика обновления токенов
+2025-08-07 05:20:43,650 - avito-token-manager - INFO - Получен сигнал 15, завершаем работу...
+2025-08-07 05:20:56,426 - avito-token-manager - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:20:56,427 - avito-token-manager - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:20:56,432 - avito-token-manager - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fc4c1acfe20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:20:56,432 - avito-token-manager - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:20:56,433 - avito-token-manager - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 34484), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:20:56,434 - avito-token-manager - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 34484), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:20:56,434 - avito-token-manager - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 34484), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:20:56,434 - avito-token-manager - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:20:56,434 - avito-token-manager - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:20:56,435 - avito-token-manager - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 34484), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:20:56,435 - avito-token-manager - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:20:56,435 - avito-token-manager - INFO - RabbitMQ отключен
+2025-08-07 05:20:56,436 - avito-token-manager - INFO - Redis отключен
+2025-08-07 05:20:56,437 - avito-token-manager - INFO - PostgreSQL отключен
+2025-08-07 05:20:56,746 - avito-token-manager - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:20:56,747 - avito-token-manager - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 48504), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:20:56,748 - avito-token-manager - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:20:56,752 - avito-token-manager - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:20:56,752 - avito-token-manager - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:20:56,752 - avito-token-manager - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:20:56,753 - avito-token-manager - INFO - Created channel=1
+2025-08-07 05:20:56,755 - avito-token-manager - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:20:56,933 - avito-token-manager - INFO - ✅ Redis подключение установлено
+2025-08-07 05:20:57,275 - avito-token-manager - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:20:57,276 - avito-token-manager - INFO - Запуск менеджера токенов Avito
+2025-08-07 05:20:57,312 - avito-token-manager - INFO - Используем токен из кеша
+2025-08-07 05:20:57,312 - avito-token-manager - INFO - Текущий токен действителен
+2025-08-07 05:20:57,313 - avito-token-manager - INFO - Запуск планировщика обновления токенов
+2025-08-07 05:25:30,804 - avito-token-manager - INFO - Получен сигнал 15, завершаем работу...
+2025-08-07 05:25:57,519 - avito-token-manager - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:25:57,521 - avito-token-manager - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:25:57,525 - avito-token-manager - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7fa85589fe80> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:25:57,526 - avito-token-manager - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:25:57,527 - avito-token-manager - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 48504), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:25:57,528 - avito-token-manager - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 48504), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:25:57,528 - avito-token-manager - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 48504), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:25:57,528 - avito-token-manager - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:25:57,529 - avito-token-manager - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:25:57,529 - avito-token-manager - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 48504), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:25:57,530 - avito-token-manager - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:25:57,530 - avito-token-manager - INFO - RabbitMQ отключен
+2025-08-07 05:25:57,531 - avito-token-manager - INFO - Redis отключен
+2025-08-07 05:25:57,532 - avito-token-manager - INFO - PostgreSQL отключен
+2025-08-07 05:25:57,859 - avito-token-manager - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:25:57,862 - avito-token-manager - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52120), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:25:57,863 - avito-token-manager - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:25:57,867 - avito-token-manager - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:25:57,867 - avito-token-manager - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:25:57,867 - avito-token-manager - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:25:57,868 - avito-token-manager - INFO - Created channel=1
+2025-08-07 05:25:57,870 - avito-token-manager - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:25:58,050 - avito-token-manager - INFO - ✅ Redis подключение установлено
+2025-08-07 05:25:58,398 - avito-token-manager - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:25:58,399 - avito-token-manager - INFO - 🚀 Запуск менеджера токенов Avito
+2025-08-07 05:25:58,435 - avito-token-manager - INFO - ✅ Используем токен из кеша
+2025-08-07 05:25:58,437 - avito-token-manager - INFO - ✅ Текущий токен действителен
+2025-08-07 05:25:58,437 - avito-token-manager - INFO - 🚀 Запуск планировщика обновления токенов
+2025-08-07 05:27:51,164 - avito-token-manager - INFO - Получен сигнал 15, завершаем работу...
+2025-08-07 05:27:58,460 - avito-token-manager - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:27:58,461 - avito-token-manager - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:27:58,467 - avito-token-manager - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f213c344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:27:58,467 - avito-token-manager - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:27:58,468 - avito-token-manager - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52120), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:27:58,469 - avito-token-manager - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52120), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:27:58,469 - avito-token-manager - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52120), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:27:58,469 - avito-token-manager - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:27:58,469 - avito-token-manager - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:27:58,470 - avito-token-manager - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 52120), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:27:58,470 - avito-token-manager - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:27:58,471 - avito-token-manager - INFO - RabbitMQ отключен
+2025-08-07 05:27:58,471 - avito-token-manager - INFO - Redis отключен
+2025-08-07 05:27:58,472 - avito-token-manager - INFO - PostgreSQL отключен
+2025-08-07 05:27:58,812 - avito-token-manager - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:27:58,813 - avito-token-manager - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 40820), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:27:58,813 - avito-token-manager - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:27:58,818 - avito-token-manager - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:27:58,818 - avito-token-manager - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:27:58,818 - avito-token-manager - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:27:58,818 - avito-token-manager - INFO - Created channel=1
+2025-08-07 05:27:58,820 - avito-token-manager - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:27:59,000 - avito-token-manager - INFO - ✅ Redis подключение установлено
+2025-08-07 05:27:59,349 - avito-token-manager - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:27:59,349 - avito-token-manager - INFO - 🚀 Запуск менеджера токенов Avito
+2025-08-07 05:27:59,386 - avito-token-manager - INFO - ✅ Используем токен из кеша
+2025-08-07 05:27:59,386 - avito-token-manager - INFO - ✅ Текущий токен действителен
+2025-08-07 05:27:59,386 - avito-token-manager - INFO - 🚀 Запуск планировщика обновления токенов
+2025-08-07 05:32:14,716 - avito-token-manager - INFO - Получен сигнал 15, завершаем работу...
+2025-08-07 05:32:59,542 - avito-token-manager - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:32:59,545 - avito-token-manager - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:32:59,549 - avito-token-manager - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f8e4a344280> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:32:59,550 - avito-token-manager - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:32:59,552 - avito-token-manager - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 40820), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:32:59,552 - avito-token-manager - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 40820), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:32:59,553 - avito-token-manager - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 40820), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:32:59,553 - avito-token-manager - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:32:59,553 - avito-token-manager - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:32:59,554 - avito-token-manager - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 40820), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:32:59,555 - avito-token-manager - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:32:59,555 - avito-token-manager - INFO - RabbitMQ отключен
+2025-08-07 05:32:59,556 - avito-token-manager - INFO - Redis отключен
+2025-08-07 05:32:59,557 - avito-token-manager - INFO - PostgreSQL отключен
+2025-08-07 05:35:56,043 - avito-token-manager - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:35:56,047 - avito-token-manager - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 46384), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:35:56,048 - avito-token-manager - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3c27d2cb20>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3c27d2cb20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:35:56,054 - avito-token-manager - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3c27d2cb20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:35:56,055 - avito-token-manager - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3c27d2cb20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:35:56,055 - avito-token-manager - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f3c27d2cb20> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:35:56,056 - avito-token-manager - INFO - Created channel=1
+2025-08-07 05:35:56,058 - avito-token-manager - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:35:56,240 - avito-token-manager - INFO - ✅ Redis подключение установлено
+2025-08-07 05:35:56,589 - avito-token-manager - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:35:56,590 - avito-token-manager - INFO - Запуск менеджера токенов Avito
+2025-08-07 05:35:56,627 - avito-token-manager - INFO - Используем токен из кеша
+2025-08-07 05:35:56,627 - avito-token-manager - INFO - Текущий токен действителен
+2025-08-07 05:35:56,628 - avito-token-manager - INFO - Запуск планировщика обновления токенов

@@ -1,0 +1,48 @@
+2025-08-07 05:26:32,925 - token-checker - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:26:32,940 - token-checker - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 39604), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:26:32,941 - token-checker - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:26:32,948 - token-checker - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:26:32,948 - token-checker - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:26:32,949 - token-checker - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:26:32,949 - token-checker - INFO - Created channel=1
+2025-08-07 05:26:32,952 - token-checker - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:26:33,133 - token-checker - INFO - ✅ Redis подключение установлено
+2025-08-07 05:26:33,484 - token-checker - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:26:33,563 - token-checker - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:26:33,563 - token-checker - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:26:33,565 - token-checker - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f4779b649a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:26:33,565 - token-checker - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:26:33,566 - token-checker - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 39604), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:26:33,566 - token-checker - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 39604), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:26:33,566 - token-checker - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 39604), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:26:33,566 - token-checker - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:26:33,566 - token-checker - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:26:33,567 - token-checker - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 39604), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:26:33,567 - token-checker - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:26:33,567 - token-checker - INFO - RabbitMQ отключен
+2025-08-07 05:26:33,567 - token-checker - INFO - Redis отключен
+2025-08-07 05:26:33,567 - token-checker - INFO - PostgreSQL отключен
+2025-08-07 05:33:39,831 - token-checker - INFO - Pika version 1.3.2 connecting to ('85.193.95.165', 5672)
+2025-08-07 05:33:39,835 - token-checker - INFO - Socket connected: <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 35982), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:39,836 - token-checker - INFO - Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>).
+2025-08-07 05:33:39,840 - token-checker - INFO - AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:33:39,840 - token-checker - INFO - AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:33:39,841 - token-checker - INFO - Connection workflow succeeded: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>
+2025-08-07 05:33:39,841 - token-checker - INFO - Created channel=1
+2025-08-07 05:33:39,843 - token-checker - INFO - ✅ RabbitMQ подключение установлено
+2025-08-07 05:33:40,024 - token-checker - INFO - ✅ Redis подключение установлено
+2025-08-07 05:33:40,373 - token-checker - INFO - ✅ PostgreSQL подключение установлено
+2025-08-07 05:33:40,449 - token-checker - INFO - Closing connection (200): Normal shutdown
+2025-08-07 05:33:40,449 - token-checker - INFO - Closing channel (200): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:33:40,451 - token-checker - INFO - Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncPlaintextTransport object at 0x7f22614849a0> params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>>
+2025-08-07 05:33:40,451 - token-checker - INFO - Closing connection (200): 'Normal shutdown'
+2025-08-07 05:33:40,451 - token-checker - INFO - Aborting transport connection: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 35982), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:40,452 - token-checker - INFO - _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 35982), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:40,452 - token-checker - INFO - Deactivating transport: state=1; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 35982), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:40,452 - token-checker - INFO - AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:33:40,452 - token-checker - INFO - Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+2025-08-07 05:33:40,452 - token-checker - INFO - Closing transport socket and unlinking: state=3; <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('185.166.196.63', 35982), raddr=('85.193.95.165', 5672)>
+2025-08-07 05:33:40,453 - token-checker - INFO - User-initiated close: result=BlockingConnection__OnClosedArgs(connection=<SelectConnection CLOSED transport=None params=<ConnectionParameters host=85.193.95.165 port=5672 virtual_host=default_vhost ssl=False>>, error=ConnectionClosedByClient: (200) 'Normal shutdown')
+2025-08-07 05:33:40,453 - token-checker - INFO - RabbitMQ отключен
+2025-08-07 05:33:40,453 - token-checker - INFO - Redis отключен
+2025-08-07 05:33:40,453 - token-checker - INFO - PostgreSQL отключен
