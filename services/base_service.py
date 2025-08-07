@@ -255,3 +255,40 @@ class BaseSmartSellerService:
         except Exception as e:
             self.logger.error(f"Ошибка выполнения SQL запроса: {e}")
             return None
+# Новые методы для работы с AI и кешем
+    def cache_conversation_context(self, chat_id: str, context_data: dict, ttl: int = 3600):
+        """Кеширует контекст диалога"""
+        key = f"conversation_context:{chat_id}"
+        return self.cache_set(key, json.dumps(context_data), ttl)
+
+    def get_conversation_context(self, chat_id: str) -> dict:
+        """Получает контекст диалога из кеша"""
+        key = f"conversation_context:{chat_id}"
+        cached = self.cache_get(key)
+        return json.loads(cached) if cached else {}
+
+    def cache_ai_request(self, request_id: str, request_data: dict, ttl: int = 1800):
+        """Кеширует AI запрос"""
+        key = f"ai_request:{request_id}"
+        return self.cache_set(key, json.dumps(request_data), ttl)
+
+    def mark_message_processing(self, message_id: str, status: str = "processing"):
+        """Помечает сообщение как обрабатываемое"""
+        key = f"message_status:{message_id}"
+        return self.cache_set(key, status, 300)  # 5 минут
+
+    def is_message_processing(self, message_id: str) -> bool:
+        """Проверяет обрабатывается ли сообщение"""
+        key = f"message_status:{message_id}"
+        status = self.cache_get(key)
+        return status == "processing"
+
+    def cache_chat_processing_status(self, chat_id: str):
+        """Кеширует статус обработки чата"""
+        key = f"chat_processed:{chat_id}"
+        return self.cache_set(key, "true", 300)  # 5 минут
+
+    def is_chat_recently_processed(self, chat_id: str) -> bool:
+        """Проверяет был ли чат недавно обработан"""
+        key = f"chat_processed:{chat_id}"
+        return bool(self.cache_get(key))
